@@ -8,4 +8,8 @@ public class NodeReaderException extends Exception {
     public NodeReaderException(String message) {
         super(message);
     }
+
+    public NodeReaderException() {
+        super();
+    }
 }

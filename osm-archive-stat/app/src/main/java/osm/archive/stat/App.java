@@ -3,21 +3,17 @@
  */
 package osm.archive.stat;
 
-import lombok.extern.log4j.Log4j2;
-import org.apache.commons.compress.compressors.CompressorException;
-import org.apache.commons.compress.compressors.CompressorStreamFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import osm.archive.stat.node.Node;
 import osm.archive.stat.node.NodeReader;
 import osm.archive.stat.node.XmlNodeReader;
 import osm.archive.stat.statistics.OsmStatistics;
+import osm.archive.stat.statistics.StatiscticsWriter;
 import osm.archive.stat.statistics.Statistics;
 
 import javax.xml.stream.XMLStreamException;
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import java.io.InputStream;
 
 public class App {
 
@@ -27,25 +23,13 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         CliParser parser = new CliParser();
-        AppConfiguration configuration = parser.parse(args);
-        if (configuration == null) {
+        AppConfiguration config = parser.parse(args);
+        if (config == null) {
             parser.printHelp();
             return;
         }
 
-        Path inputPath = Path.of(configuration.path());
-        InputStream inputStream = new BufferedInputStream(Files.newInputStream(inputPath));
-
-        if (configuration.isArchive()) {
-            try {
-                inputStream =
-                        new CompressorStreamFactory().createCompressorInputStream(inputStream);
-            } catch (CompressorException e) {
-                log.error("Can not create compress stream", e);
-                System.out.println("Can not read archive");
-                return;
-            }
-        }
+        InputStream inputStream = InputStreamSource.getStream(config);
 
         try {
             NodeReader nodeReader = new XmlNodeReader(inputStream);
@@ -53,14 +37,13 @@ public class App {
             while (nodeReader.hasNext()) {
                 osmStatistic.add(nodeReader.read());
             }
-            log.info(osmStatistic.toString());
+            StatiscticsWriter statiscticsWriter = stat -> {
+                log.info(String.format("Osm statistic for %s:\n%s", config.path(), stat));
+            };
+            statiscticsWriter.write(osmStatistic);
         } catch (XMLStreamException e) {
             log.error("Can not create xml reader", e);
-            System.out.println("Can not parse xml");
-        } catch (Exception e) {
-            e.printStackTrace();
         }
-
 
     }
 }
