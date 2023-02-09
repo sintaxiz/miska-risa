@@ -42,7 +42,7 @@ public class App {
             };
             statiscticsWriter.write(osmStatistic);
         } catch (XMLStreamException e) {
-            log.error("Can not create xml reader", e);
+            log.error("Can not parse XML", e);
         }
 
     }

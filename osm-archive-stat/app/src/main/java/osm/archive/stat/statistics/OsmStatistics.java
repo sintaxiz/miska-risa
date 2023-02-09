@@ -3,6 +3,7 @@ package osm.archive.stat.statistics;
 
 import osm.archive.stat.node.Node;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,9 +33,18 @@ public class OsmStatistics implements Statistics<Node> {
 
     @Override
     public String toString() {
-        return "OsmStatistic{" +
-                "changesPerUser=" + changesPerUser +
-                ", tagCountPerKey=" + tagCountPerKey +
-                '}';
+        StringBuilder changesPerUserSorted = new StringBuilder();
+        changesPerUser.entrySet().stream()
+                .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                .forEach(k -> changesPerUserSorted.append
+                        (k.getKey()).append(": ").append(k.getValue()).append("\n"));
+
+        StringBuilder tagCountPerKeyStr = new StringBuilder();
+        tagCountPerKey.forEach((key, value) -> tagCountPerKeyStr.append
+                (key).append(": ").append(value).append("\n"));
+
+        return "OsmStatistic\n" +
+                "changes per user\n" + changesPerUserSorted +
+                "\n\ntag count per key\n" + tagCountPerKeyStr;
     }
 }
