@@ -1,0 +1,27 @@
+
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.0.3'
+    id 'io.spring.dependency-management' version '1.1.0'
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'javax.xml.bind:jaxb-api:2.3.1'
+
+    implementation 'com.googlecode.combinatoricslib:combinatoricslib:2.3'
+
+    implementation project(':cmn')
+
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2'
+}
+
+//application {
+//    // Define the main class for the application.
+//    mainClass = 'crackhash.app.App'
+//}

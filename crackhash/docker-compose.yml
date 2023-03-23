@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  manager:
+    build:
+      context: manager
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    depends_on:
+      - rabbitmq
+    networks:
+      - crackhash
+
+  worker:
+    build:
+      context: worker
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    depends_on:
+      - rabbitmq
+    networks:
+      - crackhash
+
+  rabbitmq:
+    image: rabbitmq:3.8-management-alpine
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - crackhash
+
+networks:
+  crackhash:
+    driver: bridge
