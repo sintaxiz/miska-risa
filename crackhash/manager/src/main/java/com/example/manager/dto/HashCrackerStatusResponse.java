@@ -13,6 +13,6 @@ public class HashCrackerStatusResponse {
     private String data;
     public HashCrackerStatusResponse(RequestStatus rs) {
         status = rs.getStatus().toString();
-        data = rs.toString();
+        data = rs.getAnswers();
     }
 }

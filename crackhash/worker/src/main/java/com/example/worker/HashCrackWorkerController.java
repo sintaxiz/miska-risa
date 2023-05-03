@@ -24,7 +24,7 @@ import java.util.concurrent.Executors;
 @RequestMapping("/internal/api/worker/hash/crack")
 public class HashCrackWorkerController {
 
-    private static final String RESPONSE_XSD_PATH = "classpath:xsd/CrackHashWorkerSchema.xsd";
+    public static final String API_MANAGER_HASH_CRACK_REQUEST = "http://manager/internal/api/manager/hash/crack/request";
 
     private final RestTemplate restTemplate = new RestTemplate();
 
@@ -72,18 +72,10 @@ public class HashCrackWorkerController {
         taskResponse.setRequestId(requestId);
         taskResponse.setAnswers(convertToAnswers(matchedWords));
         taskResponse.setPartNumber(partNumber);
-        String xmlResponse = null;
-        try {
-            xmlResponse = convertToXml(taskResponse, RESPONSE_XSD_PATH);
-        } catch (JAXBException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_XML);
-        HttpEntity<String> entity = new HttpEntity<>(xmlResponse, headers);
-        restTemplate.exchange("http://manager/internal/api/manager/hash/crack/request", HttpMethod.PATCH, entity, String.class);
+        HttpEntity<CrackHashWorkerResponse> entity = new HttpEntity<>(taskResponse, headers);
+        restTemplate.exchange(API_MANAGER_HASH_CRACK_REQUEST, HttpMethod.PATCH, entity, String.class);
     }
 
     private CrackHashWorkerResponse.Answers convertToAnswers(List<String> words) {
@@ -118,15 +110,5 @@ public class HashCrackWorkerController {
         }
 
         return words;
-    }
-
-    private String convertToXml(Object object, String xsdPath) throws JAXBException, IOException {
-        JAXBContext context = JAXBContext.newInstance(object.getClass());
-        Marshaller marshaller = context.createMarshaller();
-        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-        marshaller.setProperty(Marshaller.JAXB_SCHEMA_LOCATION, xsdPath);
-        StringWriter writer = new StringWriter();
-        marshaller.marshal(object, writer);
-        return writer.toString();
     }
 }

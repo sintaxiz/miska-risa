@@ -1,6 +1,7 @@
 package com.example.manager.api;
 
 import com.example.manager.model.HashCrackerService;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,7 +17,7 @@ public class InternalController {
         this.hashCrackerService = hashCrackerService;
     }
 
-    @PatchMapping("/internal/api/manager/hash/crack/request")
+    @PatchMapping(value = "/internal/api/manager/hash/crack/request", consumes = MediaType.APPLICATION_XML_VALUE)
     public ResponseEntity<String> submitHashes(@RequestBody CrackHashWorkerResponse crackHash) {
         hashCrackerService.submitHashes(crackHash);
         return ResponseEntity.ok("");

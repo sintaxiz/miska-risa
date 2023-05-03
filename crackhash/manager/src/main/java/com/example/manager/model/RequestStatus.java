@@ -1,5 +1,6 @@
 package com.example.manager.model;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
@@ -42,6 +43,10 @@ public class RequestStatus {
 
     public void setStatus(Status status) {
         this.status = status;
+    }
+
+    public String getAnswers() {
+        return Arrays.toString(answers.toArray());
     }
 
     public enum Status {READY, IN_PROGRESS, ERROR}

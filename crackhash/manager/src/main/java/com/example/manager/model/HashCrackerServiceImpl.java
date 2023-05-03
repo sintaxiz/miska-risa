@@ -26,14 +26,9 @@ public class HashCrackerServiceImpl implements HashCrackerService {
     private static final long TIMEOUT_MS = 30000; // 30 seconds
     private static final String ALPHABET = "abcdefghijklmnopqrstuvwxyz0123456789";
 
-    // thread-safe map to store task statuses by requestId
     private final Map<String, RequestStatus> requestStatuses = new ConcurrentHashMap<>();
 
-    // RestTemplate to communicate with workers
     private final RestTemplate restTemplate;
-
-    // RabbitMQ message queue to send tasks to workers (not implemented in this example)
-    //private final RabbitTemplate rabbitTemplate;
 
     public HashCrackerServiceImpl() {
         this.restTemplate = new RestTemplate();
