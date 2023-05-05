@@ -5,10 +5,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a00a8ed1-ad67-4689-be50-8e79e0125cda" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile.mongo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager/src/main/java/com/example/manager/config/RabbitMqConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager/src/main/java/com/example/manager/rabbitmq/RabbitController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager/src/main/java/com/example/manager/reps/HashingTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager/src/main/java/com/example/manager/reps/TaskRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mongo-setup-rs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mongo-setup.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wait.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worker/src/main/java/com/example/worker/RabbitMqConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worker/src/main/java/com/example/worker/WorkerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/manager/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager/build/classes/java/main/com/example/manager/dto/HashCrackerStatusResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/manager/build/classes/java/main/com/example/manager/dto/HashCrackerStatusResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager/build/classes/java/main/com/example/manager/model/HashCrackerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/manager/build/classes/java/main/com/example/manager/model/HashCrackerServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager/build/classes/java/main/com/example/manager/model/RequestStatus$Status.class" beforeDir="false" afterPath="$PROJECT_DIR$/manager/build/classes/java/main/com/example/manager/model/RequestStatus$Status.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager/build/classes/java/main/com/example/manager/model/RequestStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/manager/build/classes/java/main/com/example/manager/model/RequestStatus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager/build/libs/manager-plain.jar" beforeDir="false" afterPath="$PROJECT_DIR$/manager/build/libs/manager-plain.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager/build/libs/manager.jar" beforeDir="false" afterPath="$PROJECT_DIR$/manager/build/libs/manager.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/manager/build/reports/tests/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/manager/build/resources/main/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/manager/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/manager/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager/src/main/java/com/example/manager/model/HashCrackerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/manager/src/main/java/com/example/manager/model/HashCrackerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager/src/main/java/com/example/manager/model/RequestStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/manager/src/main/java/com/example/manager/model/RequestStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/manager/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worker/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/worker/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worker/build/classes/java/main/com/example/worker/HashCrackWorkerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/worker/build/classes/java/main/com/example/worker/HashCrackWorkerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worker/build/libs/worker-plain.jar" beforeDir="false" afterPath="$PROJECT_DIR$/worker/build/libs/worker-plain.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worker/build/libs/worker.jar" beforeDir="false" afterPath="$PROJECT_DIR$/worker/build/libs/worker.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worker/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/worker/build/reports/tests/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worker/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/worker/build/resources/main/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worker/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/worker/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worker/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/worker/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worker/src/main/java/com/example/worker/HashCrackWorkerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/worker/src/main/java/com/example/worker/HashCrackWorkerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worker/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/worker/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +95,11 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -83,6 +120,9 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;ef07775b7b32e3553daa7c153aa9d874&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -226,10 +266,22 @@
       <workItem from="1682860929155" duration="349000" />
       <workItem from="1683024821204" duration="742000" />
       <workItem from="1683033872255" duration="63000" />
+      <workItem from="1683081418659" duration="3590000" />
+      <workItem from="1683176639292" duration="9663000" />
+      <workItem from="1683254075787" duration="1243000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-core" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.validation:jakarta.validation-api" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.data:spring-data-commons" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-messaging" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-webmvc" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.xml.ws:jakarta.xml.ws-api" />
   </component>
 </project>
